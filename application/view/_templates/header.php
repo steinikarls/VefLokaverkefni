@@ -15,12 +15,13 @@
 </head>
 <body>
     <!-- logo, check the CSS file for more info how the logo "image" is shown -->
-    <div class="logo"></div>
+
 
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/exampleone">home/exampleone</a>
-        <a href="<?php echo URL; ?>home/exampletwo">home/exampletwo</a>
-        <a href="<?php echo URL; ?>songs">songs</a>
+        <a href="<?php echo URL; ?>login/index">Index</a>
+        <a href="<?php echo URL; ?>login/Test">Test</a>
+        <a href="<?php echo URL; ?>Register/Index">Register</a>
+        
     </div>
