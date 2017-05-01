@@ -33,9 +33,7 @@ class RegisterController
             }
             
         }
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/login/loginform.php';
-        require APP . 'view/_templates/footer.php';   
+        header('location: ' . URL . 'Login/index'); 
     }
 }
 ?>
