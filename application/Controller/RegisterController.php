@@ -10,7 +10,6 @@ class RegisterController
         require APP . 'view/_templates/header.php';
         require APP . 'view/Register/registerForm.php';
         require APP . 'view/_templates/footer.php'; 
-
     }
     public function Register()
     {
@@ -28,10 +27,7 @@ class RegisterController
                 require APP . 'view/_templates/header.php';
                 require APP . 'view/Register/registerForm.php';
                 require APP . 'view/_templates/footer.php'; 
-
-
-            }
-            
+            }   
         }
         header('location: ' . URL . 'Login/index'); 
     }
