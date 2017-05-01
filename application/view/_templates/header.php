@@ -20,8 +20,6 @@
     <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>login/index">Index</a>
-        <a href="<?php echo URL; ?>login/Test">Test</a>
         <a href="<?php echo URL; ?>Register/Index">Register</a>
         
     </div>

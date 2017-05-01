@@ -5,7 +5,7 @@ use Mini\Model\Login;
 
 class loginController
 {
-    public function index()
+    public function LoginForm()
     {
         
         if(session_status() == PHP_SESSION_NONE) session_start();
@@ -15,22 +15,21 @@ class loginController
         } 
         else {
         //  aðgangi hafnða, prívat síða,  redirect á login síðu
-        header('location:'. URL.'login/Test' );
+        header('location:'. URL.'login/Index' );
         }
         require APP . 'view/_templates/header.php';
         require APP . 'view/Login/test.php';
         require APP . 'view/_templates/footer.php';     
     }
 
-    public function Test()
+    public function Index()
     {
-        
         require APP . 'view/_templates/header.php';
         require APP . 'view/Login/loginform.php';
         require APP . 'view/_templates/footer.php';     
     }
 
-    public function login()
+    public function Login()
     {
         if (isset($_POST['login'])) 
         {
@@ -64,17 +63,12 @@ class loginController
             }
             else 
             {
-                require APP . 'view/_templates/header.php';
-                echo "You didn't enter the correct details!";
-                require APP . 'view/_templates/footer.php';
+                header('location:'. URL.'login/Index' );
             }
         }
         else 
         {
-            require APP . 'view/_templates/header.php';
-            echo "You didn't enter the correct details!";
-            require APP . 'view/_templates/footer.php';  
-            
+            header('location:'. URL.'login/Index' );   
         }
     }
 
@@ -82,9 +76,7 @@ class loginController
     {
         session_start();
         session_destroy();
-
-
-        header('location:'. URL.'login/Test' );
+        header('location:'. URL.'login/Index' );
         exit();
 
     }
@@ -101,7 +93,7 @@ class loginController
         }
 
         // where to go after song has been added
-        header('location: ' . URL . 'Login/index');
+        header('location: ' . URL . 'Login/Index');
     }
 
 
