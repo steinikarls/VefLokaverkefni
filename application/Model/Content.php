@@ -19,7 +19,7 @@ class Content extends Model
     }   
 
 
-    public function addcontent($title, $content, $timasetning)
+    public function addContent($title, $content, $timasetning)
     {
         $sql = "INSERT INTO posts (title, content, timasetning) VALUES (:title, :content, :timasetning)";
         $query = $this->db->prepare($sql);
@@ -30,6 +30,7 @@ class Content extends Model
 
         $query->execute($parameters);
     }
+
 
 }
 

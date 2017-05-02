@@ -1,6 +1,6 @@
 
 
-	<form action="<?php echo URL; ?>Login/insert" method="post">
+	<form action="<?php echo URL; ?>Content/addBlog" method="post">
 	<input placeholder="title" type="text" name="title" autofocus>
 		<textarea class="tinymce" name="content"></textarea>
 		<input type="submit" name="insert" value="insert">

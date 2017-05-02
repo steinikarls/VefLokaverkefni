@@ -18,17 +18,6 @@ class Login extends Model
 
     }
 
-    public function addcontent($title, $content, $timasetning)
-    {
-        $sql = "INSERT INTO posts (title, content, timasetning) VALUES (:title, :content, :timasetning)";
-        $query = $this->db->prepare($sql);
-        $parameters = array(':title' => $title, ':content' => $content, ':timasetning' => $timasetning);
-
-        // useful for debugging: you can see the SQL behind above construction by using:
-        
-
-        $query->execute($parameters);
-    }
 
 }
 
