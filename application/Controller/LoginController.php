@@ -57,9 +57,7 @@ class loginController
                 {
                     $_SESSION['admin'] = 1;
                 }         
-                require APP . 'view/_templates/header.php';
-                require APP . 'view/Login/test.php';           
-                require APP . 'view/_templates/footer.php';  
+                header('location:'. URL.'Content/Index' );  
             }
             else 
             {
@@ -84,15 +82,11 @@ class loginController
 
     public function insert()
     {
-        // if we have POST data to create a new song entry
         if (isset($_POST["insert"])) {
-            // Instance new Model (Song)
+            $date =date('l jS \of F Y h:i:s A');
             $Login = new Login();
-            // do addSong() in model/model.php
-            $Login->addcontent($_POST["title"], $_POST["content"],  $_POST["date"]);
+            $Login->addcontent($_POST["title"], $_POST["content"], $date);
         }
-
-        // where to go after song has been added
         header('location: ' . URL . 'Login/Index');
     }
 
