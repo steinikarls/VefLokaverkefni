@@ -14,12 +14,11 @@ class ContentController
           $username = $_SESSION['username'];
         } 
         else {
-        //  aðgangi hafnða, prívat síða,  redirect á login síðu
         header('location:'. URL.'login/Index' );
         }
         $Content = new Content();
         $allContent = $Content->getContent();
-        require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/Sessionheader.php';
         require APP . 'view/Content/Index.php';
         require APP . 'view/_templates/footer.php';     
     }
@@ -32,10 +31,9 @@ class ContentController
           $username = $_SESSION['username'];
         } 
         else {
-        //  aðgangi hafnða, prívat síða,  redirect á login síðu
         header('location:'. URL.'login/Index' );
         }
-        require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/Sessionheader.php';
         require APP . 'view/Content/CreateBlog.php';
         require APP . 'view/_templates/footer.php';     
     }
@@ -57,17 +55,31 @@ class ContentController
           $username = $_SESSION['username'];
         } 
         else {
-        //  aðgangi hafnða, prívat síða,  redirect á login síðu
         header('location:'. URL.'login/Index' );
         }
         
         $Content = new Content();
         $viewContent = $Content->viewPost($_GET["postid"]);
-        require APP . 'view/_templates/header.php';
+        require APP . 'view/_templates/Sessionheader.php';
         require APP . 'view/Content/ViewBlog.php';
         require APP . 'view/_templates/footer.php';  
 
         
+    }
+    public function deletePost()
+    {
+        if(session_status() == PHP_SESSION_NONE) session_start();
+       
+        if(isset($_SESSION['username'])) {
+          $username = $_SESSION['username'];
+        } 
+        else {
+        header('location:'. URL.'login/Index' );
+        }    
+        $Content = new Content();
+        $viewContent = $Content->deletePost($_GET["postid"]);
+
+        header('location:'. URL.'Content/Index' );
     }
 }
 ?>

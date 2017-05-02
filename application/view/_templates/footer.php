@@ -1,6 +1,6 @@
 
     <div class="footer">
-     <a href="<?php echo URL; ?>login/logout">Log out</a>
+     
     </div>
 
     <!-- jQuery, loaded in the recommended protocol-less way -->
