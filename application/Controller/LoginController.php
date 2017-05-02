@@ -61,14 +61,7 @@ class loginController
         session_destroy();
         header('location:'. URL.'login/Index' );
         exit();
-
     }
-
-
-
-
-
-
 }
 
     ?>
