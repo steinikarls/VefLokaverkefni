@@ -34,7 +34,13 @@ class Content extends Model
         $parameters = array(':id' => $id);
         $query->execute($parameters);
     }
-
+    public function editPost($title, $content, $timasetning, $id)
+    {
+        $sql = "UPDATE posts SET title = :title, content = :content, timasetning = :timasetning WHERE id = :id";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':title' => $title, ':content' => $content, ':timasetning' => $timasetning, ':id' => $id);
+        $query->execute($parameters);
+    }
 
 }
 
