@@ -40,10 +40,18 @@ class ContentController
 
     public function addBlog()
     {
+        if(session_status() == PHP_SESSION_NONE) session_start();
+       
+        if(isset($_SESSION['username'])) {
+          $username = $_SESSION['username'];
+        } 
+        else {
+        header('location:'. URL.'login/Index' );
+        }
         if (isset($_POST["insert"])) {
             $date =date('l jS \of F Y h:i:s A');
             $Content = new Content();
-            $Content->addContent($_POST["title"], $_POST["content"], $date);
+            $Content->addContent($_POST["title"], $_POST["content"], $date, $username);
         }
         header('location: ' . URL . 'Content/Index');
     }

@@ -20,11 +20,11 @@ class Content extends Model
         $query->execute();
         return $query->fetchAll();
     }   
-    public function addContent($title, $content, $timasetning)
+    public function addContent($title, $content, $timasetning, $userid)
     {
-        $sql = "INSERT INTO posts (title, content, timasetning) VALUES (:title, :content, :timasetning)";
+        $sql = "INSERT INTO posts (title, content, timasetning, userid) VALUES (:title, :content, :timasetning, :userid)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':title' => $title, ':content' => $content, ':timasetning' => $timasetning);
+        $parameters = array(':title' => $title, ':content' => $content, ':timasetning' => $timasetning, ':userid' => $userid);
         $query->execute($parameters);
     }
     public function deletePost($id)
