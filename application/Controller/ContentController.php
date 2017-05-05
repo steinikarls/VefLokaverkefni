@@ -17,7 +17,7 @@ class ContentController
         header('location:'. URL.'login/Index' );
         }
         $Content = new Content();
-        $allContent = $Content->getContent();
+        $allContent = $Content->getContent($username);
         require APP . 'view/_templates/Sessionheader.php';
         require APP . 'view/Content/Index.php';
         require APP . 'view/_templates/footer.php';     

@@ -6,11 +6,12 @@ use Mini\Core\Model;
 
 class Content extends Model
 {
-    public function getContent()
+    public function getContent($userid)
     {
-        $sql = "SELECT * FROM posts ORDER BY id DESC";
+        $sql = "SELECT * FROM posts where userid = :userid ORDER BY id DESC";
         $query = $this->db->prepare($sql);
-        $query->execute();
+        $parameters = array(':userid' => $userid);
+        $query->execute($parameters);
         return $query->fetchAll();
     }   
     public function viewPost($id)
