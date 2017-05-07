@@ -2,7 +2,7 @@
     foreach ($allContent as $results => $value) 
     {
 ?>
-        <div class="posts" style="margin-left:3em;">
+        <div class="posts" style="margin-left:5%;">
         	<h2 class="post-title">
         	<a href="<?php echo URL ."Content/viewPost/?postid="?><?php echo htmlspecialchars($value->id);?>"><?php echo $value->title ;?></a>
         	</h2>
@@ -16,7 +16,7 @@
 <?php 
 	}
 ?>
-<div style="margin-left:3em;"><h2><a href="<?php echo URL . 'Content/newPost/'?>">Post</a></h2></div>
+<div style="margin-left:5%;"><h2><a href="<?php echo URL . 'Content/newPost/'?>">Post</a></h2></div>
 
 
               
